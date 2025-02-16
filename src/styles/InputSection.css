@@ -29,7 +29,8 @@
     font-family: inherit;
 }
 
-.personalInfo button{
+.personalInfo button,
+.education button{
     align-self: end;
     width: 100px;
     border-radius: 8px;
@@ -43,11 +44,13 @@
     transition: border-color 0.25s;
 }
 
-.personalInfo button:hover{
+.personalInfo button:hover,
+.education button:hover{
     border-color: #646cff;
     filter: brightness(1.1);
 }
 
-.personalInfo button:active{
+.personalInfo button:active,
+.education button:active{
     transform: scale(0.95);
 }
