@@ -1,4 +1,4 @@
-import "../styles/inputSection.css";
+import "../styles/inputSection.css"; // Importing CSS for styling
 import { useState } from "react";
 
 
