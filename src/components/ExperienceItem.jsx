@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import "../styles/experienceItem.css";
+import "../styles/ExperienceItem.css";
 
 function ExperienceItem({edit, item, onUpdate, onDelete}) {
     const [company, setCompany] = useState(item.company);
