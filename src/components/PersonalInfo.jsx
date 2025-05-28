@@ -1,4 +1,4 @@
-import "../styles/inputSection.css"; // Importing CSS for styling
+import "../styles/personalSection.css"; // Importing CSS for styling
 import { useState } from "react";
 
 
