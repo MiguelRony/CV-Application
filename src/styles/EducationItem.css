@@ -1,0 +1,96 @@
+
+.panelItem {
+    border-radius: 10px;
+    background-color: #dddddd;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.material-symbols-outlined {
+  transition: transform 0.3s ease;
+}
+
+.panelItem:hover {
+    background-color: #e0e0e0;
+}
+
+.expanded > .panelHeader > .material-symbols-outlined {
+    transform: rotate(180deg); /* a ↓ > de */
+}
+
+.editItem {
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dateDiv    {
+    display: flex;
+    gap: 50px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons :last-child {
+    margin-left: auto;
+}
+
+.buttons button:hover{
+    border-color: #646cff;
+    filter: brightness(1.1);
+}
+
+.buttons button:active{
+    transform: scale(0.95);
+}
+
+.saveBtn {
+    width: 90px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #77a5e9;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.cancelBtn {
+    width: 90px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #999999; /* Red color for cancel */
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.deleteBtn {
+    width: 90px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #f44336; /* Red color for delete */
+    cursor: pointer;
+    transition: border-color 0.25s;
+}

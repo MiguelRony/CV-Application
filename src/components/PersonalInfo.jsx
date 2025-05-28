@@ -2,11 +2,18 @@ import "../styles/inputSection.css";
 import { useState } from "react";
 
 
-function PersonalInfo(){
+function PersonalInfo(props){
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+
+    const onUpdate = () => {
+        props.setInfo.sName(firstName);
+        props.setInfo.sLastName(lastName);
+        props.setInfo.sEmail(email);
+        props.setInfo.sPhone(phone);
+    }
 
     return(
         <div className="personalInfo">
@@ -27,7 +34,7 @@ function PersonalInfo(){
                 <label htmlFor="phone">Phone</label>
                 <input id="phone" name="phone" type="tel"  pattern="[0-9]{10}" placeholder="555-555-5555" onChange={(e) => setPhone(e.target.value)} />
             </div>
-            <button>Save</button>
+            <button onClick={onUpdate}>Save</button>
         </div>
     );
 }

@@ -1,0 +1,38 @@
+.educationView,
+.experienceView {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.sectionTitle {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #cccccc;
+    padding: 5px;  
+}
+
+.educationItem,
+.experienceItem {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.educationDate,
+.experienceDate {
+    border-right: 1px solid black;
+    padding-right: 10px;
+}
+
+.schoolName,
+.companyName {
+    font-weight: bold;
+}
+
+.educationDetails,
+.experienceDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}

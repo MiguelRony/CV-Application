@@ -1,24 +1,37 @@
 .educationPanel{
+    background-color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    text-align: left;
     border: 1px solid white;
     border-radius: 10px;
     padding: 25px;
     gap: 10px;
 }
 
-.addEducation {
-    border: none;
-    height: 30px;
-    font-size: 1em;
-    background-color: rgb(40, 192, 192);
+.educationPanel.expanded > :last-child {
+    align-self: center;
 }
 
-.addEducation:hover {
+.addItemBtn  {
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 35px;
+    width: 200px;
+    font-size: 1em;
+}
+
+.addItemBtn:hover {
     filter: brightness(1.1);
 }
 
-.addEducation:active {
+.addItemBtn:active {
     transform: scale(0.95);
+}
+
+.panelHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

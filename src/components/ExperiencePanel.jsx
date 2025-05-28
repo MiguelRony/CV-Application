@@ -1,14 +1,12 @@
-// import "../styles/inputSection.css";
+import "../styles/ExperiencePanel.css"
 import { useState } from "react";
-import "../styles/educationPanel.css";
-import EducationItem from "./EducationItem";
+import ExperienceItem from "./ExperienceItem";
 
-
-function EducationPanel({ educationList}){
-    const [ expanded, setExpanded ] = useState(false);
+function ExperiencePanel({expList}) {
     const [ lastId, setLastId ] = useState(0);
-    const [ schoolsList, setSchoolsList ] = useState([]);
+    const [ experienceList, setExperienceList ] = useState([]);
     const [ viewStatus, setViewStatus ] = useState("addItemBtn active");
+    const [ expanded, setExpanded ] = useState(false);
 
 
     const handleClick = (e) => {
@@ -21,7 +19,7 @@ function EducationPanel({ educationList}){
     };
 
     const updateOrAddItem = (id, updatedItem) => {
-        setSchoolsList((prevList) => {
+        setExperienceList((prevList) => {
         const exists = prevList.some(item => item.id === id);
         let newList = [];
         if (exists) {
@@ -31,15 +29,15 @@ function EducationPanel({ educationList}){
         } else {
             newList = [...prevList, { id, ...updatedItem }];
         }
-        educationList(newList);
+        expList(newList);
         return newList;
     });
 };
 
     const deleteItem = (id) => {
-    setSchoolsList((prevList) => {
-        let newList = prevList.filter((school) => school.id !== id);
-        educationList(newList);
+    setExperienceList((prevList) => {
+        let newList = prevList.filter((job) => job.id !== id);
+        expList(newList);
         return newList;
     });
 };
@@ -48,28 +46,28 @@ function EducationPanel({ educationList}){
         return (
             <div className="educationPanel expanded">
                 <div className="panelHeader" onClick={() => expanded ? setExpanded(false) : setExpanded(true)}>
-                    <h2>Education</h2>
+                    <h2>Experience</h2>
                     <span class="material-symbols-outlined">
                         keyboard_arrow_down
                     </span>
                 </div>
-                {schoolsList.map((school) => (
-                    <EducationItem key={school.id} edit={false} item={school} onUpdate={ (newData) => updateOrAddItem(school.id, newData)} onDelete={() => deleteItem(school.id)} />
+                {experienceList.map((job) => (
+                    <ExperienceItem key={job.id} edit={false} item={job} onUpdate={ (newData) => updateOrAddItem(job.id, newData)} onDelete={() => deleteItem(job.id)} />
                 ))}
-                    <EducationItem key={lastId + 1} edit={true} item={{ id: lastId + 1, name: "", degree: "", from: "", to: "" }} onUpdate={(newData, e) => {
-                        updateOrAddItem(lastId + 1, newData);
-                        setLastId(lastId + 1);
-                        handleClick(e);
-                    }} onDelete={(e) => {deleteItem(lastId + 1);
-                        handleClick(e);
-                    }} />
+                <ExperienceItem key={lastId + 1} edit={true} item={{ id: lastId + 1, company: "", position: "", from: "", to: "", description: "" }} onUpdate={(newData, e) => {
+                    updateOrAddItem(lastId + 1, newData);
+                    setLastId(lastId + 1);
+                    handleClick(e);
+                }} onDelete={(e) => {deleteItem(lastId + 1);
+                    handleClick(e);
+                }} />
             </div>
         );
     }else if (!expanded) {
         return (
             <div className={expanded ? "educationPanel expanded" : "educationPanel"} onClick={() => expanded ? setExpanded(false) : setExpanded(true)}>
                 <div className="panelHeader">
-                    <h2>Education</h2>
+                    <h2>Experience</h2>
                     <span class="material-symbols-outlined">
                         keyboard_arrow_down
                     </span>
@@ -80,19 +78,18 @@ function EducationPanel({ educationList}){
         return(
             <div className="educationPanel expanded">
                 <div className="panelHeader" onClick={() => expanded ? setExpanded(false) : setExpanded(true)}>
-                    <h2>Education</h2>
+                    <h2>Experience</h2>
                     <span class="material-symbols-outlined">
                         keyboard_arrow_down
                     </span>
                 </div>
-                {schoolsList.map((school) => (
-                    <EducationItem key={school.id} item={school} onUpdate={ (newData) => updateOrAddItem(school.id, newData)} onDelete={() => deleteItem(school.id)} />
+                {experienceList.map((job) => (
+                    <ExperienceItem key={job.id} item={job} onUpdate={ (newData) => updateOrAddItem(job.id, newData)} onDelete={() => deleteItem(job.id)} />
                 ))}
-                <button  className={ viewStatus } onClick={handleClick}>Add Education</button>
+                <button  className={ viewStatus } onClick={handleClick}>Add Experience</button>
             </div>
         );
     }
-    
 }
 
-export default EducationPanel;
+export default ExperiencePanel;

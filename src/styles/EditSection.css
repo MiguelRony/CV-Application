@@ -1,0 +1,16 @@
+
+.edit-section{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 20px;
+}
+
+.edit-section-content{
+    flex-grow: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

@@ -1,0 +1,20 @@
+.personalInfoView {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    background-color: #00394b;
+    color: #ffffff;
+}
+
+.extraDetails{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
